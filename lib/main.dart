@@ -23,9 +23,12 @@ class NoteApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return const MaterialApp(
+        return MaterialApp(
+          theme: ThemeData(
+            brightness: Brightness.dark,
+          ),
           debugShowCheckedModeBanner: false,
-          home: HomeView(),
+          home: const HomeView(),
         );
       },
     );
