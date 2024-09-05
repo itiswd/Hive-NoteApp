@@ -17,7 +17,14 @@ class CustomBottomSheet extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 32.0.h),
-          const CustomTextField(),
+          const CustomTextField(
+            title: 'Title',
+          ),
+          SizedBox(height: 8.0.h),
+          const CustomTextField(
+            title: 'Content',
+            maxLines: 5,
+          ),
         ],
       ),
     );

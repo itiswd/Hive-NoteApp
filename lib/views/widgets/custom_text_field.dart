@@ -4,14 +4,21 @@ import 'package:hive_note/core/app_colors.dart';
 import 'package:hive_note/core/app_styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key});
+  final String title;
+  final int maxLines;
+  const CustomTextField({
+    super.key,
+    required this.title,
+    this.maxLines = 1,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       cursorColor: AppColors.lightWhite,
+      maxLines: maxLines,
       decoration: InputDecoration(
-        hintText: 'Title',
+        hintText: title,
         hintStyle: AppStyles.hint,
         border: buildBorder(),
         focusedBorder: buildBorder(),
