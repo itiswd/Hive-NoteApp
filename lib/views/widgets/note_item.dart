@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_note/core/app_colors.dart';
+import 'package:hive_note/core/app_constants.dart';
+import 'package:hive_note/core/app_styles.dart';
+
+class NoteItem extends StatelessWidget {
+  const NoteItem({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(24.0.r),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16.0.r),
+        color: AppColors.green,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          ListTile(
+            contentPadding: const EdgeInsets.all(0),
+            title: Text(
+              'Flutter Tips',
+              style: AppStyles.title,
+            ),
+            subtitle: Padding(
+              padding:
+                  EdgeInsets.symmetric(vertical: AppConstants.kVerticalPadding),
+              child: Text(
+                'Build your own apps with Flutter, Dart, and more!',
+                style: AppStyles.body,
+              ),
+            ),
+            trailing: InkWell(
+              borderRadius: BorderRadius.circular(16.0.r),
+              onTap: () {},
+              child: const Icon(
+                Icons.delete_forever_outlined,
+                size: 26,
+                color: AppColors.black,
+              ),
+            ),
+          ),
+          Text(
+            '23/12/2022',
+            style: AppStyles.date,
+          ),
+        ],
+      ),
+    );
+  }
+}
