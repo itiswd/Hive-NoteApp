@@ -25,7 +25,10 @@ class NoteApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
-          theme: ThemeData(brightness: Brightness.dark, fontFamily: 'Poppins'),
+          theme: ThemeData(
+            brightness: Brightness.dark,
+            fontFamily: 'Poppins',
+          ),
           debugShowCheckedModeBanner: false,
           home: const HomeView(),
         );

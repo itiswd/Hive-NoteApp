@@ -8,18 +8,23 @@ class AppStyles {
     fontSize: 40.sp,
   );
   static TextStyle title = TextStyle(
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     fontSize: 20.sp,
     color: AppColors.black,
   );
   static TextStyle body = TextStyle(
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w500,
     fontSize: 16.sp,
     color: AppColors.black.withOpacity(0.5),
   );
   static TextStyle date = TextStyle(
-    fontWeight: FontWeight.w300,
+    fontWeight: FontWeight.w400,
     fontSize: 12.sp,
     color: AppColors.black.withOpacity(0.5),
+  );
+  static TextStyle hint = TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 14.sp,
+    color: AppColors.lightWhite,
   );
 }
