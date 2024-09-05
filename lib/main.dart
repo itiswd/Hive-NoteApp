@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_note/views/home_view.dart';
 
 void main() {
@@ -17,13 +18,16 @@ class NoteApp extends StatelessWidget {
         statusBarIconBrightness: Brightness.light,
       ),
     );
-    return MaterialApp(
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        useMaterial3: true,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const HomeView(),
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return const MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: HomeView(),
+        );
+      },
     );
   }
 }
