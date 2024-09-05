@@ -37,10 +37,10 @@ class NoteItem extends StatelessWidget {
             trailing: InkWell(
               borderRadius: BorderRadius.circular(16.0.r),
               onTap: () {},
-              child: const Icon(
-                Icons.delete_forever_outlined,
-                size: 26,
-                color: AppColors.black,
+              child: Image.asset(
+                width: 28.0.h,
+                height: 28.0.h,
+                'assets/images/delete.png',
               ),
             ),
           ),

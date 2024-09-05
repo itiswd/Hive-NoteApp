@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_note/views/home_view.dart';
 
-void main() {
+void main() async {
+  await ScreenUtil.ensureScreenSize();
   runApp(const NoteApp());
 }
 
