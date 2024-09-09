@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_note/core/app_constants.dart';
 import 'package:hive_note/cubits/add_note/add_note_cubit.dart';
 import 'package:hive_note/views/widgets/add_note_form.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class CustomBottomSheet extends StatelessWidget {
   const CustomBottomSheet({
@@ -28,9 +27,9 @@ class CustomBottomSheet extends StatelessWidget {
           }
         },
         builder: (context, state) {
-          return ModalProgressHUD(
-            inAsyncCall: state is AddNoteLoading ? true : false,
-            child: SingleChildScrollView(
+          return SingleChildScrollView(
+            child: AbsorbPointer(
+              absorbing: state is AddNoteLoading ? true : false,
               child: Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: kHorizontalPadding,
