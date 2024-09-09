@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:hive_note/core/app_constants.dart';
+import 'package:hive_note/models/note_model.dart';
 import 'package:hive_note/views/add_note_view.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
   await Hive.initFlutter();
-  await Hive.openBox('notes_box');
+  await Hive.openBox(kNoteBox);
+  Hive.registerAdapter(NoteModelAdapter());
+  // await Hive.openBox(kNoteBox);
   runApp(const NoteApp());
 }
 

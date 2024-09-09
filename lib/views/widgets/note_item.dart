@@ -38,8 +38,7 @@ class NoteItem extends StatelessWidget {
                 style: AppStyles.title,
               ),
               subtitle: Padding(
-                padding: EdgeInsets.symmetric(
-                    vertical: AppConstants.kVerticalPadding),
+                padding: EdgeInsets.symmetric(vertical: kVerticalPadding),
                 child: Text(
                   'Build your own apps with Flutter, Dart, and more!',
                   style: AppStyles.body,

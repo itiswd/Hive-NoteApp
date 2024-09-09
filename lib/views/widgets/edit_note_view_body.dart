@@ -12,7 +12,7 @@ class EditNoteViewBody extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: AppConstants.kHorizontalPadding,
+          horizontal: kHorizontalPadding,
         ),
         child: Column(
           children: [
