@@ -3,14 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_note/core/app_colors.dart';
 
 class CustomAddButton extends StatelessWidget {
+  final void Function()? onTap;
   const CustomAddButton({
     super.key,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       borderRadius: BorderRadius.circular(8.0.r),
       child: Container(
         height: 40.0.h,

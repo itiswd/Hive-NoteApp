@@ -6,15 +6,24 @@ import 'package:hive_note/core/app_styles.dart';
 class CustomTextField extends StatelessWidget {
   final String title;
   final int maxLines;
+  final void Function(String?)? onSaved;
   const CustomTextField({
     super.key,
     required this.title,
     this.maxLines = 1,
+    this.onSaved,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      onSaved: onSaved,
+      validator: (value) {
+        if (value?.isEmpty == true) {
+          return 'Field cannot be empty';
+        }
+        return null;
+      },
       cursorColor: AppColors.lightWhite,
       maxLines: maxLines,
       decoration: InputDecoration(
