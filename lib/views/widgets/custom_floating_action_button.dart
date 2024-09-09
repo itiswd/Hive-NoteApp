@@ -15,6 +15,7 @@ class CustomFloatingActionButton extends StatelessWidget {
       elevation: 0,
       onPressed: () {
         showModalBottomSheet(
+          clipBehavior: Clip.antiAlias,
           context: context,
           builder: (context) {
             return const CustomBottomSheet();
