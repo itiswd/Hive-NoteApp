@@ -4,19 +4,25 @@ import 'package:hive_note/core/app_colors.dart';
 import 'package:hive_note/core/app_styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  final String title;
+  final String? hint;
   final int maxLines;
+  final String? initialValue;
   final void Function(String?)? onSaved;
+  final void Function(String)? onChanged;
   const CustomTextField({
     super.key,
-    required this.title,
+    this.hint,
     this.maxLines = 1,
     this.onSaved,
+    this.onChanged,
+    this.initialValue,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      initialValue: initialValue,
+      onChanged: onChanged,
       onSaved: onSaved,
       validator: (value) {
         if (value?.isEmpty == true) {
@@ -27,7 +33,7 @@ class CustomTextField extends StatelessWidget {
       cursorColor: AppColors.lightWhite,
       maxLines: maxLines,
       decoration: InputDecoration(
-        hintText: title,
+        hintText: hint,
         hintStyle: AppStyles.hint,
         border: buildBorder(),
         focusedBorder: buildBorder(),

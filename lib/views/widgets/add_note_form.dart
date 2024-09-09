@@ -31,12 +31,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
         children: [
           SizedBox(height: 32.0.h),
           CustomTextField(
-            title: 'Title',
+            hint: 'Title',
             onSaved: (title) => this.title = title,
           ),
           SizedBox(height: 8.0.h),
           CustomTextField(
-            title: 'Content',
+            hint: 'Content',
             maxLines: 5,
             onSaved: (content) => this.content = content,
           ),

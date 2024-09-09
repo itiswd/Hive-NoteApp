@@ -5,10 +5,12 @@ import 'package:hive_note/views/widgets/custom_appbar_button.dart';
 class CustomAppBar extends StatelessWidget {
   final String text;
   final IconData icon;
+  final void Function()? onTap;
   const CustomAppBar({
     super.key,
     required this.text,
     required this.icon,
+    this.onTap,
   });
 
   @override
@@ -21,6 +23,7 @@ class CustomAppBar extends StatelessWidget {
         ),
         const Spacer(),
         CustomAppbarButton(
+          onTap: onTap,
           icon: icon,
         ),
       ],
