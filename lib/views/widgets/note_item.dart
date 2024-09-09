@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_note/core/app_constants.dart';
 import 'package:hive_note/core/app_styles.dart';
+import 'package:hive_note/cubits/notes/notes_cubit.dart';
 import 'package:hive_note/models/note_model.dart';
 import 'package:hive_note/views/edit_note_view.dart';
 
@@ -48,7 +50,10 @@ class NoteItem extends StatelessWidget {
               ),
               trailing: InkWell(
                 borderRadius: BorderRadius.circular(16.0.r),
-                onTap: () {},
+                onTap: () {
+                  note.delete();
+                  BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                },
                 child: Image.asset(
                   width: 28.0.h,
                   height: 28.0.h,
