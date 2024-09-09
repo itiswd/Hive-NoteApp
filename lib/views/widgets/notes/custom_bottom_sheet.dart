@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_note/core/app_constants.dart';
 import 'package:hive_note/cubits/add_note/add_note_cubit.dart';
 import 'package:hive_note/cubits/notes/notes_cubit.dart';
-import 'package:hive_note/views/widgets/add_note_form.dart';
+import 'package:hive_note/views/widgets/notes/add_note_form.dart';
 
 class CustomBottomSheet extends StatelessWidget {
   const CustomBottomSheet({

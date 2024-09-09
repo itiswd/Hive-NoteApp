@@ -5,8 +5,8 @@ import 'package:hive_note/core/app_constants.dart';
 import 'package:hive_note/cubits/notes/notes_cubit.dart';
 import 'package:hive_note/models/note_model.dart';
 
-import 'package:hive_note/views/widgets/custom_app_bar.dart';
-import 'package:hive_note/views/widgets/custom_text_field.dart';
+import 'package:hive_note/views/widgets/shared/custom_app_bar.dart';
+import 'package:hive_note/views/widgets/shared/custom_text_field.dart';
 
 class EditNoteViewBody extends StatefulWidget {
   final NoteModel note;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_note/core/app_styles.dart';
-import 'package:hive_note/views/widgets/custom_appbar_button.dart';
+import 'package:hive_note/views/widgets/shared/custom_appbar_button.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String text;

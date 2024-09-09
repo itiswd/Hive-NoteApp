@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hive_note/views/widgets/custom_floating_action_button.dart';
-import 'package:hive_note/views/widgets/add_note_view_body.dart';
+import 'package:hive_note/views/widgets/notes/custom_floating_action_button.dart';
+import 'package:hive_note/views/widgets/notes/add_note_view_body.dart';
 
 class AddNoteView extends StatelessWidget {
   const AddNoteView({super.key});

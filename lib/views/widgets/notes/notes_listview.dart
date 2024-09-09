@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_note/cubits/notes/notes_cubit.dart';
 import 'package:hive_note/models/note_model.dart';
-import 'package:hive_note/views/widgets/note_item.dart';
+import 'package:hive_note/views/widgets/notes/note_item.dart';
 
 class NotesListView extends StatelessWidget {
   const NotesListView({

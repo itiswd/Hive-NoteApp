@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_note/models/note_model.dart';
-import 'package:hive_note/views/widgets/edit_note_view_body.dart';
+import 'package:hive_note/views/widgets/edit/edit_note_view_body.dart';
 
 class EditNoteView extends StatelessWidget {
   final NoteModel note;

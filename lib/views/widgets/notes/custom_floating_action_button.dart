@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_note/core/app_colors.dart';
-import 'package:hive_note/views/widgets/custom_bottom_sheet.dart';
+import 'package:hive_note/views/widgets/notes/custom_bottom_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
   const CustomFloatingActionButton({
