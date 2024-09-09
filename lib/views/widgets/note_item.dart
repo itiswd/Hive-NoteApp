@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive_note/core/app_colors.dart';
 import 'package:hive_note/core/app_constants.dart';
 import 'package:hive_note/core/app_styles.dart';
+import 'package:hive_note/models/note_model.dart';
 import 'package:hive_note/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
+  final NoteModel note;
   const NoteItem({
     super.key,
+    required this.note,
   });
 
   @override
@@ -26,7 +28,7 @@ class NoteItem extends StatelessWidget {
         padding: EdgeInsets.all(24.0.r),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.0.r),
-          color: AppColors.green,
+          color: Color(note.color),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -34,13 +36,13 @@ class NoteItem extends StatelessWidget {
             ListTile(
               contentPadding: const EdgeInsets.all(0),
               title: Text(
-                'Flutter Tips',
+                note.title,
                 style: AppStyles.title,
               ),
               subtitle: Padding(
                 padding: EdgeInsets.symmetric(vertical: kVerticalPadding),
                 child: Text(
-                  'Build your own apps with Flutter, Dart, and more!',
+                  note.content,
                   style: AppStyles.body,
                 ),
               ),
@@ -55,7 +57,7 @@ class NoteItem extends StatelessWidget {
               ),
             ),
             Text(
-              '23/12/2022',
+              note.date,
               style: AppStyles.date,
             ),
           ],

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_note/core/app_colors.dart';
 import 'package:hive_note/cubits/add_note/add_note_cubit.dart';
 import 'package:hive_note/models/note_model.dart';
 import 'package:hive_note/views/widgets/custom_add_button.dart';
 import 'package:hive_note/views/widgets/custom_text_field.dart';
+import 'package:intl/intl.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
@@ -19,6 +21,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
   final formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, content;
+  int? color;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -49,8 +52,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       NoteModel(
                         title: title!,
                         content: content!,
-                        date: DateTime.now().toString(),
-                        color: Colors.green.value,
+                        date: DateFormat('dd-MM-yyyy').format(DateTime.now()),
+                        color: AppColors.lightWhite.value,
                       ),
                     );
                   } else {
