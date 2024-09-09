@@ -21,7 +21,16 @@ class _AddNoteFormState extends State<AddNoteForm> {
   final formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, content;
-  int? color;
+  List<Color> noteColors = [
+    AppColors.blue,
+    AppColors.red,
+    AppColors.green,
+    AppColors.grey,
+    AppColors.lightWhite,
+  ];
+
+  int color = AppColors.blue.value;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -40,6 +49,40 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxLines: 5,
             onSaved: (content) => this.content = content,
           ),
+          SizedBox(height: 8.0.h),
+          SizedBox(
+            height: 64.0.h,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: noteColors.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.only(right: 8.0.w),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        color = noteColors[index].value;
+                      });
+                    },
+                    child: Container(
+                      width: 40.0.w,
+                      height: 40.0.h,
+                      decoration: BoxDecoration(
+                        color: noteColors[index],
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: noteColors[index].value == color
+                              ? AppColors.white
+                              : Colors.transparent,
+                          width: 2.0.w,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
           SizedBox(height: 48.0.h),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
@@ -53,7 +96,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         title: title!,
                         content: content!,
                         date: DateFormat('dd-MM-yyyy').format(DateTime.now()),
-                        color: AppColors.lightWhite.value,
+                        color: color,
                       ),
                     );
                   } else {
