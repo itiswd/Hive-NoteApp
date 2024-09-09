@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_note/core/app_colors.dart';
 
-class MainSearchButton extends StatelessWidget {
-  const MainSearchButton({
+class CustomAppbarButton extends StatelessWidget {
+  final IconData icon;
+  const CustomAppbarButton({
     super.key,
+    required this.icon,
   });
 
   @override
@@ -17,8 +19,8 @@ class MainSearchButton extends StatelessWidget {
         decoration: BoxDecoration(
             color: AppColors.white.withOpacity(0.1),
             borderRadius: BorderRadius.circular(12.0.r)),
-        child: const Icon(
-          Icons.search,
+        child: Icon(
+          icon,
         ),
       ),
     );

@@ -5,7 +5,7 @@ import 'package:hive_note/core/app_colors.dart';
 class AppStyles {
   static TextStyle header = TextStyle(
     fontWeight: FontWeight.w600,
-    fontSize: 40.sp,
+    fontSize: 36.sp,
   );
   static TextStyle title = TextStyle(
     fontWeight: FontWeight.w600,

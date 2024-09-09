@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_note/core/app_constants.dart';
-import 'package:hive_note/views/widgets/home_app_bar.dart';
+import 'package:hive_note/views/widgets/custom_app_bar.dart';
 import 'package:hive_note/views/widgets/notes_listview.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -15,7 +15,10 @@ class HomeViewBody extends StatelessWidget {
         ),
         child: const Column(
           children: [
-            HomeAppBar(),
+            CustomAppBar(
+              text: 'Notes',
+              icon: Icons.search,
+            ),
             NotesListView(),
           ],
         ),

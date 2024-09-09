@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive_note/views/home_view.dart';
+import 'package:hive_note/views/add_note_view.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
@@ -30,7 +30,7 @@ class NoteApp extends StatelessWidget {
             fontFamily: 'Poppins',
           ),
           debugShowCheckedModeBanner: false,
-          home: const HomeView(),
+          home: const AddNoteView(),
         );
       },
     );
